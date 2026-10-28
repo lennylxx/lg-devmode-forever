@@ -1,0 +1,16 @@
+{
+  "id": "com.lennylxx.devmodeforever",
+  "version": "1.0.0",
+  "vendor": "lennylxx",
+  "type": "web",
+  "main": "index.html",
+  "title": "Dev Mode Forever",
+  "appDescription": "Preserves Developer Mode, its official session token, and session time without root.",
+  "icon": "icon.png",
+  "largeIcon": "largeIcon.png",
+  "iconColor": "#bb3f3f",
+  "previewMetadata": {
+    "targetEndpoint": "luna://com.lennylxx.devmodeforever.service/autostart",
+    "sourceEndpoint": "@PREVIEW.ENDPOINT.SOURCE_LOCAL_STOREAPP"
+  }
+}

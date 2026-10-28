@@ -1,0 +1,9 @@
+{
+  "id": "com.lennylxx.devmodeforever.service",
+  "description": "Dev Mode shutdown-counter watchdog service",
+  "services": [
+    {
+      "name": "com.lennylxx.devmodeforever.service"
+    }
+  ]
+}

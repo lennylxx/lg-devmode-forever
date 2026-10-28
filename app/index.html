@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1920, height=1080">
+<title>Dev Mode Forever</title>
+<style>
+  html, body {
+    margin: 0; padding: 0;
+    width: 1920px; height: 1080px;
+    background: #101014;
+    color: #ececf1;
+    font-family: 'LG Smart UI', sans-serif;
+    overflow: hidden;
+  }
+  #app {
+    width: 1200px;
+    margin: 0 auto;
+    padding-top: 60px;
+  }
+  h1 { font-size: 68px; font-weight: 300; margin: 0 0 52px 0; }
+  h1 small { font-size: 28px; margin-left: 16px; color: #9a9aa8; }
+  .row { display: flex; margin-bottom: 18px; font-size: 34px; }
+  .row .k { width: 420px; color: #9a9aa8; }
+  .row .v { font-weight: 400; }
+  #counter { font-size: 52px; font-weight: 700; }
+  #counter.hot { color: #ff9f43; }
+  #banner {
+    margin-top: 12px; margin-bottom: 24px;
+    padding: 28px 36px;
+    border-left: 8px solid #ff9f43;
+    background: #241a10;
+    font-size: 32px;
+    line-height: 1.5;
+  }
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 52px;
+  }
+  button {
+    min-width: 350px; min-height: 88px;
+    margin: 0;
+    font-size: 34px;
+    color: #ececf1;
+    background: #1e1e28;
+    border: 2px solid #3a3a4a;
+    border-radius: 12px;
+    outline: none;
+    -webkit-transition: -webkit-transform 0.15s, background 0.15s, box-shadow 0.15s;
+    transition: transform 0.15s, background 0.15s, box-shadow 0.15s;
+  }
+  /* Selected: focused by the D-pad or hovered by the Magic Remote pointer. */
+  button:focus {
+    color: #101014;
+    background: #ececf1;
+    border-color: #ececf1;
+    -webkit-transform: scale(1.06);
+    transform: scale(1.06);
+    box-shadow: 0 0 0 6px rgba(236, 236, 241, 0.25), 0 12px 32px rgba(0, 0, 0, 0.5);
+  }
+  button.confirm {
+    color: #fff;
+    background: #ff6b75;
+    border-color: #ff6b75;
+  }
+  button.confirm:focus {
+    color: #fff;
+    background: #ff6b75;
+    border-color: #ff6b75;
+    box-shadow: 0 0 0 6px rgba(255, 107, 117, 0.35), 0 12px 32px rgba(0, 0, 0, 0.5);
+  }
+  button:disabled {
+    color: #777784;
+    background: #191920;
+    border-color: #292934;
+    -webkit-transform: none;
+    transform: none;
+    box-shadow: none;
+  }
+  #log {
+    margin-top: 24px;
+    font-size: 26px;
+    color: #8f8f9e;
+    white-space: pre-wrap;
+    word-break: break-all;
+  }
+  [hidden] { display: none; }
+</style>
+</head>
+<body>
+<div id="app">
+  <h1>Dev Mode Forever <small>v1.0.0</small></h1>
+  <div class="row"><div class="k">Developer Mode</div><div class="v" id="devmode">…</div></div>
+  <div class="row"><div class="k">Session token</div><div class="v" id="token">…</div></div>
+  <div class="row"><div class="k">Session remaining</div><div class="v" id="sessionTime">…</div></div>
+  <div class="row"><div class="k">Power-off counter</div><div class="v" id="counter">…</div></div>
+  <div class="row"><div class="k">Protection</div><div class="v" id="armed">…</div></div>
+  <div class="row"><div class="k">Last checked</div><div class="v" id="checkAt">…</div></div>
+  <div class="row"><div class="k">Last token backup</div><div class="v" id="backupAt">…</div></div>
+  <div class="row"><div class="k">Last session extension</div><div class="v" id="extendAt">…</div></div>
+  <div class="row"><div class="k">Last counter reset</div><div class="v" id="toggleAt">…</div></div>
+  <div id="banner" hidden></div>
+  <div class="buttons">
+    <button id="checkBtn">Check now</button>
+    <button id="extendBtn">Extend session</button>
+    <button id="toggleBtn">Force toggle</button>
+  </div>
+  <div id="log">arming…</div>
+</div>
+<script src="main.js"></script>
+</body>
+</html>
