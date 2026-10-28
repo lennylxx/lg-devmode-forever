@@ -4,6 +4,7 @@
   <p>LG Dev Mode Forever is a standalone webOS IPK that automatically resets the
   power-off counter with a controlled reboot and renews the official session —
   <strong>no root required</strong>.</p>
+  <p><strong>More webOS tools:</strong> <a href="https://github.com/lennylxx/webos-iptv-player">IPTV Player</a> · <a href="https://github.com/lennylxx/lg-geolock-bypass">GeoLock Bypass</a> · <a href="https://github.com/lennylxx/lg-ipk-download">IPK Download</a></p>
 </div>
 
 ## Why this project exists
