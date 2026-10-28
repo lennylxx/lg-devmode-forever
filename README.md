@@ -37,12 +37,33 @@ Before installing:
    `ares-launch` can connect to it.
 
 ```bash
-./build.sh                   # node --check + ares-package -> *.ipk
+./build.sh                   # node --check + ares-package -> IPK + Homebrew manifest
 ./build.sh --install [tv]   # + ares-install, then opens the app once
 ```
 
 Replace `[tv]` with your configured device name, or omit it to use the
 CLI's default device.
+
+### Homebrew Channel
+
+Install the community
+[webOS Homebrew Channel](https://github.com/webosbrew/webos-homebrew-channel),
+then open **Settings > Add repository** and enter:
+
+```text
+https://raw.githubusercontent.com/lennylxx/webos-homebrew/main/repository.json
+```
+
+Confirm **Add repository** on the TV. Return to the app list, select
+**Dev Mode Forever**, and choose **Install**. Homebrew Channel can then
+detect updates from later GitHub releases.
+
+To prefill the repository URL from a computer configured with the webOS CLI,
+run:
+
+```bash
+ares-launch --device tv org.webosbrew.hbchannel -p '{"launchMode":"addRepository","url":"https://raw.githubusercontent.com/lennylxx/webos-homebrew/main/repository.json"}'
+```
 
 > [!TIP]
 > After installation, the watchdog runs automatically at every boot.

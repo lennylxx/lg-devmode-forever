@@ -27,11 +27,13 @@ jobs:
       - name: Check syntax and build IPK
         run: ./build.sh
 
-      - name: Upload IPK
+      - name: Upload release artifacts
         uses: actions/upload-artifact@v7
         with:
           name: lg-devmode-forever
-          path: com.lennylxx.devmodeforever_*.ipk
+          path: |
+            *.ipk
+            *.manifest.json
           if-no-files-found: error
 
   release:
@@ -48,5 +50,7 @@ jobs:
       - name: Release
         uses: softprops/action-gh-release@v3
         with:
-          files: com.lennylxx.devmodeforever_*.ipk
+          files: |
+            *.ipk
+            *.manifest.json
           fail_on_unmatched_files: true
